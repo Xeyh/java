@@ -54,7 +54,7 @@ public class NBP {
         }
     }
 
-    public static exRate sendRequest(String symbol, String date) throws IOException
+    public static exRate sendRequest(String symbol, String date) throws Exception
     {
         double mid = 0.0;
 
