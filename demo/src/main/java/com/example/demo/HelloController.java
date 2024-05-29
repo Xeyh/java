@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
@@ -20,7 +21,7 @@ public class HelloController extends AnchorPane {
     public void app() {
 
 
-        NBP nbp = new NBP();
+        //Weather.sendRequest();
 //        User.setText(nbp.sendRequest("USD", "today").getMid().toString());
     }
     @FXML

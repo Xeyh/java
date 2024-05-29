@@ -54,23 +54,22 @@ public class NBP {
         }
     }
 
-    public static exRate sendRequest(String symbol, String date)
+    public static exRate sendRequest(String symbol, String date) throws Exception
     {
         double mid = 0.0;
-        try {
-            URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/" + symbol + "/" + date);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.connect();
-            String inline = "";
-            Scanner scanner = new Scanner(url.openStream());
-            inline += scanner.nextLine();
-            scanner.close();
-            JSONObject data_obj = new JSONObject(inline);
-            mid = Double.parseDouble(data_obj.getJSONArray("rates").getJSONObject(0).get("mid").toString());
-        } catch (Exception e) {
-            return null;
-        }
+
+        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/" + symbol + "/" + date);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.connect();
+        String inline = "";
+        Scanner scanner = new Scanner(url.openStream());
+        inline += scanner.nextLine();
+        scanner.close();
+        JSONObject data_obj = new JSONObject(inline);
+        mid = Double.parseDouble(data_obj.getJSONArray("rates").getJSONObject(0).get("mid").toString());
+
+
         return new exRate(symbol, mid, date);
     }
 }
