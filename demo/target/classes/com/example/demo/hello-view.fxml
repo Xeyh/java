@@ -9,7 +9,7 @@
       <Pane layoutX="200.0" layoutY="73.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Button layoutX="74.0" layoutY="75.0" mnemonicParsing="false" text="register" onAction="#register"/>
-            <Button layoutX="84.0" layoutY="132.0" mnemonicParsing="false" text="app" />
+            <Button layoutX="84.0" layoutY="132.0" mnemonicParsing="false" text="app" onAction="#app"/>
          </children>
       </Pane>
    </children>
